@@ -1,0 +1,2501 @@
+  [1m[36m (19.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePosts (20160331093403)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160331093403"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-03-31 15:05:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1972ms (Views: 1952.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 15:05:44 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 15:05:45 +0530
+
+
+Started GET "/posts/new" for ::1 at 2016-03-31 15:05:46 +0530
+Processing by PostsController#new as HTML
+  Rendered posts/_form.html.erb (13.0ms)
+  Rendered posts/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 81ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 15:05:50 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RMiM6lpJZPE1wkwSpPiGX9r9mG5MAVkiYCli8PBtrIjxlOvW6PmA7n9o0tyiu1me9UyKJXx20NoxtTykLV8O1g==", "post"=>{"title"=>"sdf", "content"=>"sfas"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sdf"], ["content", "sfas"], ["created_at", "2016-03-31 09:35:50.499488"], ["updated_at", "2016-03-31 09:35:50.499488"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-03-31 15:05:50 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:42:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+                </div>
+                 ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:32: unknown regexp options - dv
+unmatched close parenthesis: /div>
+                <div class="field">
+                <%= f.label :content );@output_buffer.safe_append='<br>
+                '.freeze;@output_buffer.append=( f.text_arera :content, class: "form-control post_content" );@output_buffer.safe_append='
+              </i
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:35: unknown regexp options - btt
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:38: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+        </div>
+         ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:40: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:32: unknown regexp options - dv
+  app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:35: unknown regexp options - btt
+  app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+  app/views/posts/index.html.erb:38: unknown regexp options - dv
+  app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:40: unknown regexp options - dv
+  app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+  app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:42:19 +0530
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+                </div>
+                 ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:32: unknown regexp options - dv
+unmatched close parenthesis: /div>
+                <div class="field">
+                <%= f.label :content );@output_buffer.safe_append='<br>
+                '.freeze;@output_buffer.append=( f.text_arera :content, class: "form-control post_content" );@output_buffer.safe_append='
+              </i
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:35: unknown regexp options - btt
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:38: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+        </div>
+         ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:40: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:32: unknown regexp options - dv
+  app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:35: unknown regexp options - btt
+  app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+  app/views/posts/index.html.erb:38: unknown regexp options - dv
+  app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:40: unknown regexp options - dv
+  app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+  app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (14.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (29.0ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:42:20 +0530
+Processing by PostsController#index as HTML
+  Rendered posts/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+                </div>
+                 ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:32: unknown regexp options - dv
+unmatched close parenthesis: /div>
+                <div class="field">
+                <%= f.label :content );@output_buffer.safe_append='<br>
+                '.freeze;@output_buffer.append=( f.text_arera :content, class: "form-control post_content" );@output_buffer.safe_append='
+              </i
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:35: unknown regexp options - btt
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+            </div>
+             ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:38: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+        </div>
+         ^
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:40: unknown regexp options - dv
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+/Users/sajithmohan/rails_project/ajax_app/app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/posts/index.html.erb:28: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:32: unknown regexp options - dv
+  app/views/posts/index.html.erb:33: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:35: unknown regexp options - btt
+  app/views/posts/index.html.erb:37: syntax error, unexpected '<', expecting ')'
+  app/views/posts/index.html.erb:38: unknown regexp options - dv
+  app/views/posts/index.html.erb:39: syntax error, unexpected '<'
+  app/views/posts/index.html.erb:40: unknown regexp options - dv
+  app/views/posts/index.html.erb:42: unterminated regexp meets end of file
+  app/views/posts/index.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (12.9ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.1ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:47:48 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (9.6ms)
+  Rendered posts/index.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `merge' for "form-control":String):
+    33:     						</div>
+    34:     						<div class="field">
+    35:     						<%= f.label :content %><br>
+    36:     						<%= f.text_area :content, "form-control" %>
+    37:     					</div>
+    38:     				</div>
+    39:     				<div class="modal-footer">
+  app/views/posts/_post.html.erb:36:in `block in _app_views_posts__post_html_erb___1650215043955514126_70331552297920'
+  app/views/posts/_post.html.erb:20:in `_app_views_posts__post_html_erb___1650215043955514126_70331552297920'
+  app/views/posts/index.html.erb:12:in `_app_views_posts_index_html_erb__675985289983201881_70331543363540'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (35.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (27.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:49:00 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (2.4ms)
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    12:       <%= render @posts %>
+    13:     </div>
+    14: 
+    15:     <%= form_for(@post) do |f| %>
+    16:     <div class="modal fade" id="mynewpost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    17:       <div class="modal-dialog">
+    18:         <div class="modal-content">
+  app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__675985289983201881_70331543363540'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.1ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:51:58 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (2.1ms)
+  Rendered posts/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `text_arera' for #<ActionView::Helpers::FormBuilder:0x007feeacdda6b0>):
+    24:             <div class="modal-body">
+    25:               <div class="field">
+    26:                 <%= f.label :title %><br>
+    27:                 <%= f.text_arera :title, class: "form-control post_title" %>
+    28:                 </div>
+    29:                 <div class="field">
+    30:                 <%= f.label :content %><br>
+  app/views/posts/index.html.erb:27:in `block in _app_views_posts_index_html_erb__675985289983201881_70331543363540'
+  app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__675985289983201881_70331543363540'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.3ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:54:39 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.8ms)
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 351ms (Views: 349.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 16:54:40 +0530
+
+
+Started GET "/new" for ::1 at 2016-03-31 16:55:27 +0530
+
+ActionController::RoutingError (No route matches [GET] "/new"):
+  actionpack (4.2.5.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.2) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.2) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (13.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (28.2ms)
+
+
+Started GET "/" for ::1 at 2016-03-31 16:55:35 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/1" for ::1 at 2016-03-31 16:55:43 +0530
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ihY/0KTLiATcEIdiLdfO4GUdtNfV1hQGM/jXI8x0b1s/SljsFntsG5a6GawrlBEhSqymnOWhnf5iZIl3EUbNBQ==", "post"=>{"title"=>"sdf", "content"=>"sfas"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-03-31 16:55:43 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 64ms (Views: 62.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1/edit" for ::1 at 2016-03-31 16:55:45 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/_form.html.erb (2.4ms)
+  Rendered posts/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 16:55:50 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (2.2ms)
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 16:56:02 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Oo3ktwTmi76F114Ugrtjdogb6EAkv8NShKm330aVSw+P0YOLtlZvoc99wNqE+Ly3p6r6CxTISqrVNemLm6fpUQ==", "post"=>{"title"=>"", "content"=>""}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", ""], ["content", ""], ["created_at", "2016-03-31 11:26:02.876499"], ["updated_at", "2016-03-31 11:26:02.876499"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/2" for ::1 at 2016-03-31 16:56:02 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2/edit" for ::1 at 2016-03-31 16:56:04 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/_form.html.erb (1.3ms)
+  Rendered posts/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 16:56:06 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (2.7ms)
+  Rendered posts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 16:58:02 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (2.6ms)
+  Rendered posts/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:00:16 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (3.8ms)
+  Rendered posts/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 79ms (Views: 72.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 17:00:16 +0530
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:00:26 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tn1tdtVfYGpk+btcrW/OT3/mtRKtAHvwUGHCoyHHpfT7IQpKZ++EdS5TJZKrLBGOUFenWZ138ggB/Zz3/PUHqg==", "post"=>{"title"=>"jafajf", "content"=>"gdfs"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "jafajf"], ["content", "gdfs"], ["created_at", "2016-03-31 11:30:26.254503"], ["updated_at", "2016-03-31 11:30:26.254503"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-03-31 17:00:26 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:00:28 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:00:33 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y+4vhsOcGiF21wvkOzSu9jPz4He544zTXl2rblSUIqh+ski6cSz+Pjx9lSo9d3E3HELyPImUBSsPwfU6iaaA9g==", "post"=>{"title"=>"", "content"=>""}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["content", ""], ["created_at", "2016-03-31 11:30:33.805939"], ["updated_at", "2016-03-31 11:30:33.805939"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/4" for ::1 at 2016-03-31 17:00:33 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:00:36 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (5.0ms)
+  Rendered posts/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:00:47 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B+Rf18YXXqckGedUEvtMzLSVPaCexgH1jqV93cwiQ9KyuDjrdKe6uG6zeZoUuJMNmyQv666xiA3fOSOJERDhjA==", "post"=>{"title"=>"anjan", "content"=>"fdsfsdvndfsv"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "anjan"], ["content", "fdsfsdvndfsv"], ["created_at", "2016-03-31 11:30:47.563042"], ["updated_at", "2016-03-31 11:30:47.563042"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-03-31 17:00:47 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-03-31 17:00:50 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/_form.html.erb (1.2ms)
+  Rendered posts/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:00:52 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (5.8ms)
+  Rendered posts/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:01:02 +0530
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ZHnagq4DpW7nLL0zfS+Tz4qhSKERW2PzaxOOlLrNCpEzYBWuAjqivE2LDrLt2GOEZuXabQy5HecMBBuj9mWdA==", "post"=>{"title"=>"anjan", "content"=>"ok"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "anjan"], ["content", "ok"], ["created_at", "2016-03-31 11:31:02.324518"], ["updated_at", "2016-03-31 11:31:02.324518"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/6" for ::1 at 2016-03-31 17:01:02 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:01:03 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (7.4ms)
+  Rendered posts/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2016-03-31 17:01:06 +0530
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2016-03-31 17:06:49 +0530
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/5" for ::1 at 2016-03-31 17:06:56 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d2N74whxcncNa/9uwt3mn7NQVfkO6hfzXp+zhv0J6LfCPxzfusGWaEfBYaDEnjlenOFHsj6dngsPA+3SIDtK6Q==", "id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 5]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:06:56 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (6.3ms)
+  Rendered posts/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/6" for ::1 at 2016-03-31 17:06:57 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WUBCjzSfDIenMS4E56Cl8h1fciwqSlMHtES/bxvLXaLsHCWzhi/omO2bsMrh43ozMu5gZxo92v/l2OE7xvn//A==", "id"=>"6"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:06:57 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (5.1ms)
+  Rendered posts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/4" for ::1 at 2016-03-31 17:06:58 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ziTIs1gCbYWtUXRiRDdatWIGcT14oyzwqJFDgcek34V7eK+P6rKJmuf76qxCdIV0TbdjdkjUpQj5DR3VGpZ92w==", "id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 4]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:06:58 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (4.1ms)
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/1" for ::1 at 2016-03-31 17:06:59 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MsSH/+JNWBFAaRi5Wjuq97r7VhT2Qb6R4ipv1clTmVqHmODDUP28DgrDhndceHU2lUpEX8Y2N2mztjGBFGE7BA==", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:06:59 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.3ms)
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/3" for ::1 at 2016-03-31 17:07:00 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FssHNFGBj1POD990dKiA9Bs0uPt2uTwO5/F1UBWGAr6jl2AI4zFrTISlQbpy6181NIWqsEbOtfa2bSsEyLSg4A==", "id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 3]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:07:00 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (2.1ms)
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/2" for ::1 at 2016-03-31 17:07:00 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"94o+xSEO/WhIrcIr76ZF8R3sVRG+5unswKkrCs7gceNC1ln5k74ZdwIHXOXp5ZowMl1HWo6RYBSRNXVeE9LTvQ==", "id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:07:00 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:13:46 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 17:13:46 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 17:13:46 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 17:13:46 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 17:13:46 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 17:13:47 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 17:13:47 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 17:13:47 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 17:13:47 +0530
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:13:51 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"fdafc", "content"=>"dsvgdsvg"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "fdafc"], ["content", "dsvgdsvg"], ["created_at", "2016-03-31 11:43:51.987695"], ["updated_at", "2016-03-31 11:43:51.987695"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/create.js.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:27:18 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.8ms)
+  Rendered posts/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 17:27:18 +0530
+
+
+Started DELETE "/posts/7" for ::1 at 2016-03-31 17:27:22 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q2JtCjaUWsjWIsnbXZy18fufJCBogYwDwOXS1lEjc6sePgo2hCS+15yIVxVb32ow1C42a1j2BfuReYyCjBHR9Q==", "id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:27:22 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:27:42 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjan", "content"=>"std"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "anjan"], ["content", "std"], ["created_at", "2016-03-31 11:57:42.675268"], ["updated_at", "2016-03-31 11:57:42.675268"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (2.4ms)
+  Rendered posts/create.js.erb (3.9ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:27:54 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"neha", "content"=>"std"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "neha"], ["content", "std"], ["created_at", "2016-03-31 11:57:54.419453"], ["updated_at", "2016-03-31 11:57:54.419453"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:28:29 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"hello", "content"=>"hhdh"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hello"], ["content", "hhdh"], ["created_at", "2016-03-31 11:58:29.067728"], ["updated_at", "2016-03-31 11:58:29.067728"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/10" for ::1 at 2016-03-31 17:28:32 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/abnIMib8KBBWYwXJzVSxZVyhyUQ4U4KjN+f7UWlnv1I+oAceisUvwvzEtkhdo0EusOVbiCWx/LdQ8G5mJc8ow==", "id"=>"10"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:28:32 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.2ms)
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/8" for ::1 at 2016-03-31 17:28:34 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w1ASDQMXj6R8octlbZbOPlzGC8vy7gQ+aOCgISWF70F2DHUxsadruzYLVatr1RH/c3cZgMKZjcY5fP51+LdNHw==", "id"=>"8"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 8]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:28:34 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/9" for ::1 at 2016-03-31 17:28:40 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vs8YX+imo4h0iPzVLclp1dcf4g4esOlpyoqgOyz6RfLjk39jWhZHlz4iYhsrirYU+K7wRS7HYJGbFv5v8cjnrA==", "id"=>"9"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:28:40 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:28:45 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"hfgfgb", "content"=>"fgbfgn"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hfgfgb"], ["content", "fgbfgn"], ["created_at", "2016-03-31 11:58:45.889627"], ["updated_at", "2016-03-31 11:58:45.889627"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/11" for ::1 at 2016-03-31 17:32:07 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XfesIhz0ZM3ESvNrM4fVeOJ0SfvZ5iX7oBGs8AMUJ1roq8serkSA0o7gbaU1xAq5zcVbsOmRrAPxjfKk3iaFBA==", "id"=>"11"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:32:07 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:32:25 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjanna", "content"=>"rffsdkfdsjkffdgjhygosagrtytysrbnbrvcxgrcvbtcfstrvshxb hou"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "anjanna"], ["content", "rffsdkfdsjkffdgjhygosagrtytysrbnbrvcxgrcvbtcfstrvshxb hou"], ["created_at", "2016-03-31 12:02:25.595192"], ["updated_at", "2016-03-31 12:02:25.595192"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/create.js.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:45:42 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 69ms (Views: 68.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:45:49 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"bcfxb", "content"=>"dxfbgdbn"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "bcfxb"], ["content", "dxfbgdbn"], ["created_at", "2016-03-31 12:15:49.987751"], ["updated_at", "2016-03-31 12:15:49.987751"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (2.1ms)
+  Rendered posts/create.js.erb (3.1ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/12" for ::1 at 2016-03-31 17:47:50 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FsCe/6v6enjKOs0/me9oM/5jeRKdNzGeoGDGPXXj06ujnPnDGUqeZ4CQU/GfrLfy0dJrWa1AuGbx/JhpqNFx9Q==", "id"=>"12"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:47:50 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:47:53 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:48:01 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"vz", "content"=>"vxz"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "vz"], ["content", "vxz"], ["created_at", "2016-03-31 12:18:01.051150"], ["updated_at", "2016-03-31 12:18:01.051150"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:52:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (12.7ms)
+  Rendered posts/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 419ms (Views: 395.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 17:53:03 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"cfds", "content"=>"sdfdsv"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "cfds"], ["content", "sdfdsv"], ["created_at", "2016-03-31 12:23:03.312881"], ["updated_at", "2016-03-31 12:23:03.312881"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.3ms)
+  Rendered posts/create.js.erb (3.7ms)
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:55:10 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:55:16 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.8ms)
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 17:55:27 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (4.6ms)
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:01:14 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.5ms)
+  Rendered posts/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 18:01:14 +0530
+
+
+Started DELETE "/posts/15" for ::1 at 2016-03-31 18:07:30 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"B/mII2xxCp9LS1fF8zLw0/06+Zsip1yWfoDB9+SRcdOype8f3sHugAHhyQv1cS8S0ovr0BLQ1W4vHJ+jOaPTjQ==", "id"=>"15"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 15]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 15]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 59ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:07:31 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (3.1ms)
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:07:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (14.4ms)
+  Rendered posts/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 451ms (Views: 427.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 18:07:58 +0530
+
+
+Started POST "/posts" for ::1 at 2016-03-31 18:08:06 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"cscz", "content"=>"cszc"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "cscz"], ["content", "cszc"], ["created_at", "2016-03-31 12:38:06.292855"], ["updated_at", "2016-03-31 12:38:06.292855"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.2ms)
+  Rendered posts/create.js.erb (3.6ms)
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:12:12 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (4.4ms)
+  Rendered posts/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 18:12:12 +0530
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:12:58 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.7ms)
+  Rendered posts/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 18:12:58 +0530
+
+
+Started DELETE "/posts/13" for ::1 at 2016-03-31 18:22:23 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NPpLOP/XliJUnGcziccxgbUMh6ZbKTFmZkeAPKLBMKeBpiwETWdyPR42+f2PhO5Amr2V7WteuJ43295of/OS+Q==", "id"=>"13"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 13]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:22:23 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (3.1ms)
+  Rendered posts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/14" for ::1 at 2016-03-31 18:22:26 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n8MovkrVBP/ZuZfwyE0HOepgUoGi+Yg4oC3Z++Lm1/wqn0+C+GXg4JMTCT7ODtj4xdFAypKOAcDxsYevP9R1og==", "id"=>"14"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 14]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:22:26 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/16" for ::1 at 2016-03-31 18:22:27 +0530
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tjwPKF4+gfYi8TAHfytkOE+QHgnBjNMicZT5Xu6SmCwDYGgU7I5l6Whbrsl5aLv5YCEMQvH7WtogCKcKM6A6cg==", "id"=>"16"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 16]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 60ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:22:27 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for ::1 at 2016-03-31 18:27:53 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 16.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-03-31 18:27:53 +0530
+
+
+Started POST "/posts" for ::1 at 2016-03-31 18:27:59 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"sdfdzvc", "content"=>"vxzcv"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sdfdzvc"], ["content", "vxzcv"], ["created_at", "2016-03-31 12:57:59.368710"], ["updated_at", "2016-03-31 12:57:59.368710"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (2.3ms)
+  Rendered posts/create.js.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/posts/17" for ::1 at 2016-03-31 18:28:03 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"17"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 17]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for ::1 at 2016-03-31 18:28:13 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"cfhg", "content"=>"ncxg"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "cfhg"], ["content", "ncxg"], ["created_at", "2016-03-31 12:58:13.165570"], ["updated_at", "2016-03-31 12:58:13.165570"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/create.js.erb (2.6ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 10:49:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (54.2ms)
+  Rendered posts/index.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 548ms (Views: 508.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/posts/18" for ::1 at 2016-04-01 10:49:14 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 11.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 10:49:29 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"i am ", "content"=>"who am i"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.2ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "i am "], ["content", "who am i"], ["created_at", "2016-04-01 05:19:29.842919"], ["updated_at", "2016-04-01 05:19:29.842919"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.2ms)
+  Rendered posts/create.js.erb (3.6ms)
+Completed 200 OK in 47ms (Views: 25.3ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 10:53:57 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"my attitude", "content"=>"my style\r\n"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "my attitude"], ["content", "my style\r\n"], ["created_at", "2016-04-01 05:23:57.437295"], ["updated_at", "2016-04-01 05:23:57.437295"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.5ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 10:54:24 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"hello", "content"=>"hii"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "hello"], ["content", "hii"], ["created_at", "2016-04-01 05:24:24.581734"], ["updated_at", "2016-04-01 05:24:24.581734"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/posts/19" for ::1 at 2016-04-01 10:54:40 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"19"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 19]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:11:31 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (2.7ms)
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:11:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (42.3ms)
+  Rendered posts/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 371ms (Views: 346.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 11:11:51 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"fsdf", "content"=>"fsdf"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "fsdf"], ["content", "fsdf"], ["created_at", "2016-04-01 05:41:51.409313"], ["updated_at", "2016-04-01 05:41:51.409313"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.4ms)
+  Rendered posts/create.js.erb (3.9ms)
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:14:50 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (4.7ms)
+  Rendered posts/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/21" for ::1 at 2016-04-01 11:14:51 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"21"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 21]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:18:49 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.7ms)
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:19:07 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (13.4ms)
+  Rendered posts/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 324ms (Views: 300.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 11:19:12 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"dfb", "content"=>"dbf"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "dfb"], ["content", "dbf"], ["created_at", "2016-04-01 05:49:12.158717"], ["updated_at", "2016-04-01 05:49:12.158717"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.5ms)
+  Rendered posts/create.js.erb (3.9ms)
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:19:30 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (5.0ms)
+  Rendered posts/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:24:36 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.8ms)
+  Rendered posts/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 11:24:57 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"dfgs", "content"=>"dsg"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dfgs"], ["content", "dsg"], ["created_at", "2016-04-01 05:54:58.137971"], ["updated_at", "2016-04-01 05:54:58.137971"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (11.6ms)
+  Rendered posts/create.js.erb (15.2ms)
+Completed 200 OK in 51ms (Views: 21.4ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/posts/24" for ::1 at 2016-04-01 11:25:04 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"24"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 24]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 24]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.3ms)
+Completed 200 OK in 9ms (Views: 2.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:32:23 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.9ms)
+  Rendered posts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 288ms (Views: 287.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:34:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (15.1ms)
+  Rendered posts/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 316ms (Views: 292.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-01 11:34:59 +0530
+
+
+Started DELETE "/posts/20" for ::1 at 2016-04-01 11:35:03 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"20"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 20]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.3ms)
+Completed 200 OK in 10ms (Views: 2.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 11:35:08 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"sdcas", "content"=>"fcdsvf"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "sdcas"], ["content", "fcdsvf"], ["created_at", "2016-04-01 06:05:08.708289"], ["updated_at", "2016-04-01 06:05:08.708289"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.3ms)
+  Rendered posts/create.js.erb (3.7ms)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/posts/22" for ::1 at 2016-04-01 11:37:00 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"22"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 22]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 11:38:54 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (3.1ms)
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/23" for ::1 at 2016-04-01 11:38:57 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"23"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 11:39:04 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"bx∫", "content"=>"xd∫˜"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "bx∫"], ["content", "xd∫˜"], ["created_at", "2016-04-01 06:09:04.008633"], ["updated_at", "2016-04-01 06:09:04.008633"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/posts/26" for ::1 at 2016-04-01 11:39:09 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"26"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 26]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:16:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (12.2ms)
+  Rendered posts/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 367ms (Views: 315.4ms | ActiveRecord: 0.5ms)
+
+
+Started PUT "/posts/25" for ::1 at 2016-04-01 12:17:12 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"b", "content"=>"a"}, "commit"=>"Update", "id"=>"25"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "b"], ["content", "a"], ["updated_at", "2016-04-01 06:47:12.590217"], ["id", 25]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (2.5ms)
+  Rendered posts/update.js.erb (4.0ms)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:18:07 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/25" for ::1 at 2016-04-01 12:18:09 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"25"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 25]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 25]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.3ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:18:28 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the book", "content"=>"what is the content"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "the book"], ["content", "what is the content"], ["created_at", "2016-04-01 06:48:28.333868"], ["updated_at", "2016-04-01 06:48:28.333868"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/create.js.erb (3.1ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:18:43 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the book", "content"=>"what is the content\r\n?????"}, "commit"=>"Update", "id"=>"27"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "what is the content\r\n?????"], ["updated_at", "2016-04-01 06:48:43.746374"], ["id", 27]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/update.js.erb (2.4ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:18:50 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:18:58 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"afa", "content"=>"af"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "afa"], ["content", "af"], ["created_at", "2016-04-01 06:48:58.406326"], ["updated_at", "2016-04-01 06:48:58.406326"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/posts/28" for ::1 at 2016-04-01 12:19:05 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"28"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 28]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:19:18 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the book", "content"=>"what is the content\r\n????? \r\n\r\nwow"}, "commit"=>"Update", "id"=>"27"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "what is the content\r\n????? \r\n\r\nwow"], ["updated_at", "2016-04-01 06:49:18.024745"], ["id", 27]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.8ms)
+  Rendered posts/update.js.erb (2.8ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:20:10 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:20:16 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the book", "content"=>"what is the content\r\n????? \r\n\r\nwow"}, "commit"=>"Update", "id"=>"27"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:21:52 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.3ms)
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-01 12:21:52 +0530
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:21:57 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the book", "content"=>"what is the content\r\n????? vxcv\r\n\r\nwow"}, "commit"=>"Update", "id"=>"27"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["content", "what is the content\r\n????? vxcv\r\n\r\nwow"], ["updated_at", "2016-04-01 06:51:57.648546"], ["id", 27]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.9ms)
+  Rendered posts/update.js.erb (3.3ms)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:22:19 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 16ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:22:25 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the bookgfsgz", "content"=>"what is the content\r\n????? vxcv\r\n\r\nwow"}, "commit"=>"Update", "id"=>"27"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "the bookgfsgz"], ["updated_at", "2016-04-01 06:52:25.851554"], ["id", 27]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/update.js.erb (3.1ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:24:33 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:24:37 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zgv", "content"=>"zv"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "zgv"], ["content", "zv"], ["created_at", "2016-04-01 06:54:37.557401"], ["updated_at", "2016-04-01 06:54:37.557401"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.5ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:24:43 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zb", "content"=>"bz"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "zb"], ["content", "bz"], ["created_at", "2016-04-01 06:54:43.551228"], ["updated_at", "2016-04-01 06:54:43.551228"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/create.js.erb (2.7ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/posts/29" for ::1 at 2016-04-01 12:24:51 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zgv", "content"=>"zvbxzb"}, "commit"=>"Update", "id"=>"29"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["content", "zvbxzb"], ["updated_at", "2016-04-01 06:54:51.576849"], ["id", 29]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/update.js.erb (2.5ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:25:06 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (3.7ms)
+  Rendered posts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 71ms (Views: 70.4ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/30" for ::1 at 2016-04-01 12:25:15 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zbmm", "content"=>"bz"}, "commit"=>"Update", "id"=>"30"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "zbmm"], ["updated_at", "2016-04-01 06:55:15.319167"], ["id", 30]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/update.js.erb (2.7ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:39:57 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.5ms)
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/27" for ::1 at 2016-04-01 12:40:02 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"the bookgfsgz", "content"=>"what is the content\r\n????? vxcv\r\n\r\nwow"}, "commit"=>"Update", "id"=>"27"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:45:34 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.6ms)
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:45:42 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjan", "content"=>"gdsg"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "anjan"], ["content", "gdsg"], ["created_at", "2016-04-01 07:15:42.215236"], ["updated_at", "2016-04-01 07:15:42.215236"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/create.js.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:46:19 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (5.1ms)
+  Rendered posts/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:46:24 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"dgdfb", "content"=>"fcb"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dgdfb"], ["content", "fcb"], ["created_at", "2016-04-01 07:16:24.832073"], ["updated_at", "2016-04-01 07:16:24.832073"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (2.0ms)
+  Rendered posts/create.js.erb (3.5ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:46:44 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"bxfzb", "content"=>"xb"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "bxfzb"], ["content", "xb"], ["created_at", "2016-04-01 07:16:44.756269"], ["updated_at", "2016-04-01 07:16:44.756269"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.0ms)
+  Rendered posts/create.js.erb (3.4ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/posts/29" for ::1 at 2016-04-01 12:46:51 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"29"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 29]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 29]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/posts/31" for ::1 at 2016-04-01 12:46:53 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"31"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 31]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/posts/30" for ::1 at 2016-04-01 12:46:54 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"30"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 30]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/posts/33" for ::1 at 2016-04-01 12:46:54 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"33"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 33]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/posts/27" for ::1 at 2016-04-01 12:46:56 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"27"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 27]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/32" for ::1 at 2016-04-01 12:46:57 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"32"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 32]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:47:06 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"bndx", "content"=>"ngdfxn"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "bndx"], ["content", "ngdfxn"], ["created_at", "2016-04-01 07:17:06.117293"], ["updated_at", "2016-04-01 07:17:06.117293"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:47:30 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"dzsb", "content"=>"bdszfn"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "dzsb"], ["content", "bdszfn"], ["created_at", "2016-04-01 07:17:30.621143"], ["updated_at", "2016-04-01 07:17:30.621143"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/create.js.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:47:55 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zsb", "content"=>"nxc"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "zsb"], ["content", "nxc"], ["created_at", "2016-04-01 07:17:55.035833"], ["updated_at", "2016-04-01 07:17:55.035833"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.9ms)
+  Rendered posts/create.js.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:48:06 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (4.1ms)
+  Rendered posts/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:48:11 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"dbz", "content"=>"bcxz"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dbz"], ["content", "bcxz"], ["created_at", "2016-04-01 07:18:11.429221"], ["updated_at", "2016-04-01 07:18:11.429221"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/create.js.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 12:48:39 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"kmhb", "content"=>"ljb."}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "kmhb"], ["content", "ljb."], ["created_at", "2016-04-01 07:18:39.925575"], ["updated_at", "2016-04-01 07:18:39.925575"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/create.js.erb (2.4ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/posts/36" for ::1 at 2016-04-01 12:48:45 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"zsbb,b", "content"=>"nxc"}, "commit"=>"Update", "id"=>"36"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 36]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "zsbb,b"], ["updated_at", "2016-04-01 07:18:45.698426"], ["id", 36]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.3ms)
+  Rendered posts/update.js.erb (2.2ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:49:12 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (5.9ms)
+  Rendered posts/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/34" for ::1 at 2016-04-01 12:49:17 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"bndx", "content"=>"ngdfxn,mn,"}, "commit"=>"Update", "id"=>"34"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "ngdfxn,mn,"], ["updated_at", "2016-04-01 07:19:17.381040"], ["id", 34]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/update.js.erb (3.3ms)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:49:30 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (5.8ms)
+  Rendered posts/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/posts/34" for ::1 at 2016-04-01 12:49:32 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"34"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 34]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/posts/36" for ::1 at 2016-04-01 12:49:33 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"36"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 36]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 36]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/35" for ::1 at 2016-04-01 12:49:35 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"35"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 35]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 35]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/posts/38" for ::1 at 2016-04-01 12:49:36 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"38"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 38]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 38]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/posts/37" for ::1 at 2016-04-01 12:49:38 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"37"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 37]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 37]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 12:49:41 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered collection (0.0ms)
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 13:13:29 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"", "content"=>""}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", ""], ["content", ""], ["created_at", "2016-04-01 07:43:29.875991"], ["updated_at", "2016-04-01 07:43:29.875991"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/create.js.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/posts/39" for ::1 at 2016-04-01 13:58:46 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"39"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 39]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 39]]
+  [1m[36m (16.4ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 34.1ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 13:59:00 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjajbdjasbcf", "content"=>"what is my jsdbbajbjkbgkjsbjk"}, "commit"=>"Create"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "anjajbdjasbcf"], ["content", "what is my jsdbbajbjkbgkjsbjk"], ["created_at", "2016-04-01 08:29:00.971890"], ["updated_at", "2016-04-01 08:29:00.971890"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/create.js.erb (2.6ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 13:59:13 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcd", "content"=>"what is my jsdbbajbjkbgkjsbjk"}, "commit"=>"Update", "id"=>"40"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 40]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "abcd"], ["updated_at", "2016-04-01 08:29:13.336822"], ["id", 40]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.3ms)
+  Rendered posts/update.js.erb (2.2ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 13:59:22 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 13:59:26 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 13:59:32 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 13:59:40 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcdefs", "content"=>"what is my jsdbbajbjkbgkjsbjk"}, "commit"=>"Update", "id"=>"40"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "abcdefs"], ["updated_at", "2016-04-01 08:29:40.171454"], ["id", 40]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 13:59:47 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.3ms)
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 14:00:09 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcdefs", "content"=>"reload th"}, "commit"=>"Update", "id"=>"40"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 40]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["content", "reload th"], ["updated_at", "2016-04-01 08:30:09.771704"], ["id", 40]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:00:18 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 14:00:23 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcdefs", "content"=>"reload th"}, "commit"=>"Update", "id"=>"40"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/update.js.erb (2.7ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:00:33 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 14:00:37 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcdefs", "content"=>"reload th"}, "commit"=>"Update", "id"=>"40"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.5ms)
+  Rendered posts/update.js.erb (2.4ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:01:23 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 67ms (Views: 66.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:01:25 +0530
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (1.7ms)
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts" for ::1 at 2016-04-01 14:01:33 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjan", "content"=>"hiiihi"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "anjan"], ["content", "hiiihi"], ["created_at", "2016-04-01 08:31:33.477530"], ["updated_at", "2016-04-01 08:31:33.477530"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.8ms)
+  Rendered posts/create.js.erb (2.9ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/posts/41" for ::1 at 2016-04-01 14:01:43 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"anjan", "content"=>"hiiihi"}, "commit"=>"Update", "id"=>"41"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 41]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:01:49 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (2.5ms)
+  Rendered posts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/posts/40" for ::1 at 2016-04-01 14:02:14 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"abcdefs", "content"=>"reload th"}, "commit"=>"Update", "id"=>"40"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered posts/_post.html.erb (1.4ms)
+  Rendered posts/update.js.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 14:02:16 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (2.8ms)
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-01 16:00:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (52.9ms)
+  Rendered posts/index.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 404ms (Views: 380.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-04 11:18:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (13.1ms)
+  Rendered posts/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 477ms (Views: 441.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/scaffolds.self-5c2d03a9b218d232f2011e1e0a890181b497d09d348f38948f72bc0830001155.css?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/posts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-04 11:18:21 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-04 11:18:22 +0530
+
+
+Started POST "/posts" for ::1 at 2016-04-04 11:18:33 +0530
+Processing by PostsController#create as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rg", "content"=>"gddfg"}, "commit"=>"Create"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (14.8ms)[0m  INSERT INTO "posts" ("title", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "rg"], ["content", "gddfg"], ["created_at", "2016-04-04 05:48:33.496152"], ["updated_at", "2016-04-04 05:48:33.496152"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (2.4ms)
+  Rendered posts/create.js.erb (3.8ms)
+Completed 200 OK in 47ms (Views: 13.9ms | ActiveRecord: 15.7ms)
+
+
+Started PUT "/posts/42" for ::1 at 2016-04-04 11:18:44 +0530
+Processing by PostsController#update as JS
+  Parameters: {"utf8"=>"✓", "post"=>{"title"=>"rg", "content"=>"gddfggdf"}, "commit"=>"Update", "id"=>"42"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 42]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "posts" SET "content" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["content", "gddfggdf"], ["updated_at", "2016-04-04 05:48:44.636877"], ["id", 42]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  Rendered posts/_post.html.erb (1.6ms)
+  Rendered posts/update.js.erb (3.0ms)
+Completed 200 OK in 72ms (Views: 17.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-19 12:59:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/_post.html.erb (66.0ms)
+  Rendered posts/index.html.erb within layouts/application (79.2ms)
+Completed 200 OK in 577ms (Views: 536.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-19 12:59:42 +0530
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/_post.html.erb (3.8ms)
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/posts/40" for ::1 at 2016-04-19 12:59:48 +0530
+Processing by PostsController#destroy as JS
+  Parameters: {"id"=>"40"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 40]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "posts" WHERE "posts"."id" = ?  [["id", 40]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  Rendered posts/destroy.js.erb (0.4ms)
+Completed 200 OK in 108ms (Views: 10.6ms | ActiveRecord: 2.1ms)
